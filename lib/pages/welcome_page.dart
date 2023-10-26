@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:login_sign_up_ui/pages/pages.dart';
+import 'package:go_router/go_router.dart';
+import 'package:login_sign_up_ui/router/router.dart';
 import 'package:login_sign_up_ui/utils/utils.dart';
 import 'package:login_sign_up_ui/widgets/widgets.dart';
 
 class WelcomePage extends StatelessWidget {
+  static WelcomePage builder(BuildContext context, GoRouterState state) =>
+      const WelcomePage();
   const WelcomePage({super.key});
 
   @override
@@ -43,13 +46,7 @@ class WelcomePage extends StatelessWidget {
                 const SizedBox(height: 40.0),
                 Center(
                   child: InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (ctx) => const LoginPage(),
-                        ),
-                      );
-                    },
+                    onTap: () => context.push(RouteLocation.login),
                     child: CustomButton(
                       width: size.width * 0.8,
                       text: 'JOIN NOW',

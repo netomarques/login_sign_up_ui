@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:login_sign_up_ui/pages/pages.dart';
-import 'package:login_sign_up_ui/utils/constants.dart';
+import 'package:go_router/go_router.dart';
+import 'package:login_sign_up_ui/router/router.dart';
+import 'package:login_sign_up_ui/utils/utils.dart';
 import 'package:login_sign_up_ui/widgets/widgets.dart';
 
 class LoginPage extends StatelessWidget {
+  static LoginPage builder(BuildContext context, GoRouterState state) =>
+      const LoginPage();
   const LoginPage({super.key});
 
   @override
@@ -72,13 +75,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 Center(
                   child: TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (ctx) => const SignUpPage(),
-                        ),
-                      );
-                    },
+                    onPressed: () => context.push(RouteLocation.signUp),
                     child: const Text(
                       'Create New Account',
                       style: TextStyle(

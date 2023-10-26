@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_sign_up_ui/widgets/widgets.dart';
 
 class SignUpPage extends StatelessWidget {
+  static SignUpPage builder(BuildContext context, GoRouterState state) =>
+      const SignUpPage();
+
   const SignUpPage({super.key});
 
   @override
